@@ -63,7 +63,7 @@ public class Billetautomat {
 			System.out.println("#        " + billetpris + " kr.       #");
 			System.out.println("#                     #");
 			System.out.println("##########B##T#########");
-			System.out.println("# Du har "+(balance-billetpris)+" kr til gode       #");
+			System.out.println("# Du har "+(balance-billetpris)+" kr til gode	#");
 			System.out.println("##########B##T#########");
 			System.out.println();
 
@@ -76,9 +76,9 @@ public class Billetautomat {
 
 	public int returpenge() {
 		int returbeløb = balance;	
-		balance = 0;
-		System.out.println("Du får "+returbeløb+" kr. retur");
-		return returbeløb;										
+		System.out.println("Du får "+returbeløb+" kr. retur");	
+		balance=0;
+		return returbeløb;	
 	}
 
 	
