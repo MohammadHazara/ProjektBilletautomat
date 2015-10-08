@@ -13,7 +13,7 @@ public class Billetautomat {
 	 */
 	public Billetautomat() {
 		billetpris = 10;
-		balance = 1;
+		balance = 0;
 		antalBilletterSolgt = 0;
 	}
 
@@ -29,7 +29,14 @@ public class Billetautomat {
 	 * Modtag nogle penge (i kroner) fra en kunde.
 	 */
 	public void indsætPenge(int beløb) {
-		balance = balance + beløb;
+		if (beløb>0){
+			balance = balance + beløb;
+		}
+		else
+		{
+			System.out.println("Ugyldigt beløb!");		//** Fejl konstateret ved tilføj af negativ beløb.
+		}
+		
 	}
 
 	/**
@@ -56,7 +63,7 @@ public class Billetautomat {
 			System.out.println("#        " + billetpris + " kr.       #");
 			System.out.println("#                     #");
 			System.out.println("##########B##T#########");
-			System.out.println("# Du har " + (balance-billetpris) + " kr til gode       #");
+			System.out.println("# Du har "+(balance-billetpris)+" kr til gode       #");
 			System.out.println("##########B##T#########");
 			System.out.println();
 
@@ -68,8 +75,8 @@ public class Billetautomat {
 
 
 	public int returpenge() {
-		int returbeløb = balance;
-		balance = 0;						//**ændret fra balance=0 til balance= balance-returpenge					
+		int returbeløb = balance;	
+		balance = 0;
 		System.out.println("Du får "+returbeløb+" kr. retur");
 		return returbeløb;										
 	}
